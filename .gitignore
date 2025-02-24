@@ -1,0 +1,43 @@
+# Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Virtual environments
+.env/
+.venv/
+venv/
+env/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Python distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Poetry
+.poetry/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pytest
+.cache/
+
+# Coverage reports
+.coverage
+.coverage.*
+*.hypothesis/
