@@ -1,6 +1,6 @@
 from radcad import Simulation, Experiment
 from radcad.engine import Engine, Backend
-from radcad.core import generate_parameter_sweep
+from radcad.utils import generate_parameter_sweep
 import pandas as pd
 from radcad import Model
 
