@@ -6,8 +6,9 @@ authors = [
     {name = "Your Name",email = "you@example.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.8,<3.13"
 dependencies = [
+    "radcad (>=0.14.0,<0.15.0)"
 ]
 
 
