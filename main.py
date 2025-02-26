@@ -16,7 +16,7 @@ model = Model(
 
 simulation = Simulation(model=model, timesteps=100, runs=10)
 experiment = Experiment([simulation])
-experiment.engine = Engine(backend=Backend.PATHOS,drop_substeps=True)
+experiment.engine = Engine(backend=Backend.PATHOS)
 
 raw_result = experiment.run()
 df = pd.DataFrame(raw_result)

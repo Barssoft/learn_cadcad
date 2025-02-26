@@ -9,7 +9,9 @@ readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "radcad (>=0.14.0,<0.15.0)",
-    "nbformat (>=5.10.4,<6.0.0)"
+    "nbformat (>=5.10.4,<6.0.0)",
+    "anywidget (>=0.9.14,<0.10.0)",
+    "black (>=25.1.0,<26.0.0)"
 ]
 
 
