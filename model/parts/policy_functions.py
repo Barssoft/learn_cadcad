@@ -40,9 +40,12 @@ def p_new_agents(params, substep, state_history, previous_state):
 
 @nb.njit(parallel=True)
 def fast_update(agents, active_size):
+    temp = np.zeros(active_size, dtype=np.int32)
     for i in nb.prange(active_size):
         if agents[i, 2] > 2:
-            agents[i, 0] += 10
+            temp[i] = 10
+
+    agents[:active_size, 0] += temp
 
 
 def p_add_balance(params, substep, state_history, previous_state):
