@@ -50,11 +50,10 @@ def p_add_balance(params, substep, state_history, previous_state):
     agents = previous_state["agents"]
     active_size = previous_state["number_agents"]
 
-    # fast_update(agents, active_size)
+    fast_update(agents, active_size)
 
-    col2 = agents[:active_size, 2]
-    mask = ne.evaluate("col2 > 2")
-    agents[:active_size, 0][mask] += 10
+    # col2 = agents[:active_size, 2]
+    # agents[:active_size, 0] += ne.evaluate("10 * (col2 > 2)")
 
     return {}
 
