@@ -1,22 +1,15 @@
-from radcad import Simulation, Experiment
-from radcad.engine import Engine, Backend
-from radcad.utils import generate_parameter_sweep
 import pandas as pd
-from radcad import Model
+from model.run import df
 
-from model.system_parameters import parameters
-from model.state_variables import initial_state
-from model.state_update_blocks import partial_state_update_blocks
+df1 = df.copy(deep=True)
+print(df1)
+last_row = df1.iloc[-1]
+print(last_row)
+print(len(last_row["agents"]))
+print(last_row["agents"].shape[0])
 
-model = Model(
-    params=parameters,
-    initial_state=initial_state,
-    state_update_blocks=partial_state_update_blocks,
-)
+columns = [f"col{i}" for i in range(10)]
+df4 = pd.DataFrame(last_row["agents"], columns=columns)
 
-simulation = Simulation(model=model, timesteps=100, runs=10)
-experiment = Experiment([simulation])
-experiment.engine = Engine(backend=Backend.PATHOS)
-
-raw_result = experiment.run()
-df = pd.DataFrame(raw_result)
+# Выводим DataFrame
+print(df4)

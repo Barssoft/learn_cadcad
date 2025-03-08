@@ -14,9 +14,9 @@ model = Model(
     state_update_blocks=partial_state_update_blocks,
 )
 
-simulation = Simulation(model=model, timesteps=100, runs=10)
+simulation = Simulation(model=model, timesteps=20000, runs=1)
 experiment = Experiment([simulation])
-experiment.engine = Engine(backend=Backend.PATHOS,drop_substeps=True)
+experiment.engine = Engine(backend=Backend.PATHOS, drop_substeps=True, deepcopy=False)
 
 raw_result = experiment.run()
 df = pd.DataFrame(raw_result)
