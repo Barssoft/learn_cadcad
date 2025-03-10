@@ -14,7 +14,8 @@ model = Model(
     state_update_blocks=partial_state_update_blocks,
 )
 
-simulation = Simulation(model=model, timesteps=20000, runs=1)
+
+simulation = Simulation(model=model, timesteps=1000, runs=1)
 experiment = Experiment([simulation])
 experiment.engine = Engine(backend=Backend.PATHOS, drop_substeps=True, deepcopy=False)
 
